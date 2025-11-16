@@ -7,10 +7,11 @@
 
     <style>
         body {
-            background-image: url("");
+            background-image: url("webbgi.jpg");
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            align-items: center;
             }
         .start{
             background-color: blue;
@@ -22,10 +23,61 @@
             font-weight: bold;
             font-size: large;
             cursor: pointer;
+            align-items: center;
         }
-            
-    </style>
+         .profile-pic-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid #ccc;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-bottom: 10px;
+        }
+        #profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .options-container {
+            display: flex;
+            gap: 15px; /* Space between option circles */
+            margin-top: 15px;
+            justify-content: center;
+        }
 
+        .option-thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent; /* Default border is transparent */
+            transition: border-color 0.3s;
+            object-fit: cover;
+        }
+
+        /* Style for the currently selected option */
+        .option-thumbnail.selected {
+            border-color: #007bff; /* Blue border for selected item */
+        }
+
+        .option-thumbnail:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hide the actual file input button */
+        #file-input {
+            display: none;
+        }
+        .bacg{
+            background-color: #ff910070;
+        }
+    </style>
     <body>
         <h1><center>Welcome to Know Better</center></h1>
         <h2><em><center>Login</center></em></h2>
@@ -44,9 +96,75 @@
                 <input type="password" id="password" name="password">
             </div></center>
 
-        </form>
+        </form> 
+        <center><h2>Set Your Profile Picture</h2>
+
+    <!-- Main Display Area -->
+    <div class="profile-pic-container">
+        <!-- We will use placeholder images here; replace with your actual image paths -->
+        <img src="avatar1.png" alt="Profile Picture" id="profile-pic">
+    </div></center>
+
+    <!-- Options Section -->
+    <center><h3>Choose an option or upload your own:</h3></center>
+    <center><div class="options-container">
+        <!-- Option 1 (Default) -->
+        <center><img src="profile_1.jpg" class="option-thumbnail selected" data-src="profile_1.jpg" alt="Option 1"></center>
+
+        <!-- Option 2 (Replace avatar2.png with your second image file path) -->
+        <center><img src="profile_2.jpg" class="option-thumbnail" data-src="profile_2.jpg" alt="Option 2" align="center"></center>
+
+        <!-- Upload Option Button (uses a label to trigger file input) -->
+        <center><label for="file-input" class="option-thumbnail" style="display: flex; justify-content: center; align-items: center; font-size: 24px;" align="center">
+            ➕
+            </label></center>
+    </div></center>
+    
+    <!-- Hidden File Input -->
+    <center><input type="file" id="file-input" accept="image/*"></center>
+
+    <script>
+        const profilePicDisplay = document.getElementById('profile-pic');
+        const fileInput = document.getElementById('file-input');
+        const optionThumbnails = document.querySelectorAll('.option-thumbnail');
+
+        // --- Handle Predefined Options Selection ---
+        optionThumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', () => {
+                // 1. Update the main display if a data-src is present
+                const src = thumbnail.getAttribute('data-src');
+                if (src) {
+                    profilePicDisplay.src = src;
+                }
+
+                // 2. Update the 'selected' class for styling
+                optionThumbnails.forEach(t => t.classList.remove('selected'));
+                if (src) { // Only add 'selected' class if it's one of the static image options
+                     thumbnail.classList.add('selected');
+                }
+               
+            });
+        });
+
+        // --- Handle File Upload ---
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    // Update the main display with the uploaded image
+                    profilePicDisplay.src = e.target.result;
+                    
+                    // Remove 'selected' class from all options when a new file is uploaded
+                    optionThumbnails.forEach(t => t.classList.remove('selected'));
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 
         <ul>
-            <center><li><a href="main.html" class="start"> Get started </a></li></center>
+           <center><li><a href="main.html" class="start"> Get started </a></li></center>
+        </ul>
     </body>
 </html>
