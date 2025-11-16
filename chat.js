@@ -1,11 +1,11 @@
 const { RiTa } = require('rita');
 
 
-function choose(arr) {
+export function choose(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function chatbotResponse(input) {
+export function chatbotResponse(input) {
   const lower = input.toLowerCase();
   const pos = RiTa.pos(input);   
   const tokens = RiTa.tokenize(input);
@@ -63,7 +63,7 @@ function chatbotResponse(input) {
     ]);
   }
 
-  if (lower.includes("study") || lower.includes("tips") || lower.includes("advice")) {
+  if (lower.includes("study") || ){
     return choose([
         "A great study tip: break your work into small chunks and take short breaks!",
         "Try the Pomodoro method — 25 minutes of focus, 5 minutes of rest. It really works.",
