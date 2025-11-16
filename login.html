@@ -12,18 +12,17 @@
             background-attachment: fixed;
             background-size: cover;
             align-items: center;
+            text-align: center;
             }
         .start{
             background-color: blue;
             font: bold;
             color:white;
             text-decoration-line: none;
-            font-display: inline-block;
             padding: 10px 20px;
             font-weight: bold;
             font-size: large;
-            cursor: pointer;
-            align-items: center;
+            justify-content: center;
         }
          .profile-pic-container {
             width: 150px;
@@ -74,59 +73,118 @@
         #file-input {
             display: none;
         }
-        .bacg{
-            background-color: #ff910070;
-        }
+        .outer-container {
+      width: 100%;         /* Full width */
+      height: 200px;       /* Set desired height */
+      display: flex;
+      align-items: center; /* Vertical center */
+      justify-content: center; /* Horizontal: right */
+    }
+    .logo-container {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #E3F1FF;
+    }
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      align-items: center;
+      justify-content: center;
+    }
+    .login-haze-bg {
+         background: rgba(255, 255, 255, 0.7); /* White, 70% opacity */
+         border-radius: 24px;                   /* Optional: rounded corners */
+        box-shadow: 0 8px 32px 0 rgba(31,38,135,0.15); /* Optional: soft shadow */
+        padding: 32px 24px;                    /* Adjust as needed */
+         max-width: 350px;                      /* Or your desired width */
+         margin: 48px auto;                     /* Center horizontally, adjust as needed */
+        backdrop-filter: blur(7px);            /* Optional: glassy blur effect */
+        text-align: center;
+    }   
+    input[type="text"]
+    {
+  font-family: 'Segoe UI', 'Arial', sans-serif; /* Change font here */
+  font-size: 18px;        /* Adjust size as needed */
+  color: #333;            /* Text color */
+  padding: 8px 12px;      /* Field padding */
+  border-radius: 8px;     /* Optional: rounded corners */
+  border: 1px solid #aaa; /* Optional: border style */
+  outline: none;          /* Remove default outline */
+  margin-bottom: 16px;   /* Space below the input field */
+}
+    input[type="password"] {
+  font-family: 'Segoe UI', 'Arial', sans-serif; /* Change font here */
+  font-size: 18px;        /* Adjust size as needed */
+  color: #333;            /* Text color */
+  padding: 8px 12px;      /* Field padding */
+  border-radius: 8px;     /* Optional: rounded corners */
+  border: 1px solid #aaa; /* Optional: border style */
+  outline: none;          /* Remove default outline */
+  margin-bottom: 16px;  /* Space below the input field */
+}
     </style>
     <body>
-        <h1><center>Welcome to Know Better</center></h1>
-        <h2><em><center>Login</center></em></h2>
+        <div class="login-haze-bg">
+        <div class="outer-container">
+    <div class="logo-container">
+      <img src="logo.jpg" alt="Logo" class="logo-img">
+    </div>
+  </div>
+        <h1 style="font-family: serif; color: rgba(255, 136, 0, 0.975);"><center>Login</center></h1>
 
         <form>
 
             <center><div id="username">
                 <label for="username"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/></svg>                </label>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480v58q0 59-40.5 100.5T740-280q-35 0-66-15t-52-43q-29 29-65.5 43.5T480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480v58q0 26 17 44t43 18q26 0 43-18t17-44v-58q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93h200v80H480Zm0-280q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Z"/></svg></label>
                 <input type="text" id="username" name="username">
             </div></center>
 
             <center><div id="password">
                 <label for="password">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg>                </label>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm240-200q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80Z"/></svg></label>
                 <input type="password" id="password" name="password">
             </div></center>
 
         </form> 
-        <center><h2>Set Your Profile Picture</h2>
+        <center><h3 style="font-family: serif; color: rgba(255, 136, 0, 0.975);">Set Your Profile Picture</h3>
 
     <!-- Main Display Area -->
     <div class="profile-pic-container">
         <!-- We will use placeholder images here; replace with your actual image paths -->
-        <img src="avatar1.png" alt="Profile Picture" id="profile-pic">
-    </div></center>
+        <img src="avatar1.png" id="profile-pic">
+    </div>
 
     <!-- Options Section -->
-    <center><h3>Choose an option or upload your own:</h3></center>
-    <center><div class="options-container">
+    <h3 style="font-family: serif; color: rgba(255, 136, 0, 0.975);">Choose one:</h3>
+    <div class="options-container">
         <!-- Option 1 (Default) -->
-        <center><img src="profile_1.jpg" class="option-thumbnail selected" data-src="profile_1.jpg" alt="Option 1"></center>
+        <img src="profile_1.jpg" class="option-thumbnail selected" data-src="profile_1.jpg" alt="Option 1">
 
         <!-- Option 2 (Replace avatar2.png with your second image file path) -->
-        <center><img src="profile_2.jpg" class="option-thumbnail" data-src="profile_2.jpg" alt="Option 2" align="center"></center>
+        <img src="profile_2.jpg" class="option-thumbnail" data-src="profile_2.jpg" alt="Option 2">
 
         <!-- Upload Option Button (uses a label to trigger file input) -->
-        <center><label for="file-input" class="option-thumbnail" style="display: flex; justify-content: center; align-items: center; font-size: 24px;" align="center">
+        <label for="file-input" class="option-thumbnail" style="display: flex; justify-content: center; align-items: center; font-size: 24px;">
             ➕
-            </label></center>
-    </div></center>
+            </label>
+    </div>
     
     <!-- Hidden File Input -->
-    <center><input type="file" id="file-input" accept="image/*"></center>
+    <input type="file" id="file-input" accept="image/*">
 
     <script>
         const profilePicDisplay = document.getElementById('profile-pic');
         const fileInput = document.getElementById('file-input');
-        const optionThumbnails = document.querySelectorAll('.option-thumbnail');
+        const optionThumbnails = document.querySelectorAll('option-thumbnail');
 
         // --- Handle Predefined Options Selection ---
         optionThumbnails.forEach(thumbnail => {
@@ -162,9 +220,9 @@
             }
         });
     </script>
-
         <ul>
-           <center><li><a href="main.html" class="start"> Get started </a></li></center>
+           <li><a href="main.html" class="start">Get started </a></li>
         </ul>
+        </div>
     </body>
 </html>
