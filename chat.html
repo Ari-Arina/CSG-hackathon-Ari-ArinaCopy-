@@ -12,10 +12,47 @@
         font-size: large;
         cursor: pointer;
       }
+      nav {
+            width: 100%;
+            position:fixed;
+            top: 0;
+            background-color: rgb(76, 117, 211);
+            padding: 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            float: left;
+        }
+
+        ul li a {
+            display: block;
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        ul li a:hover:not(.active) {
+            background-color: #FF00FF;
+        }
     </style>
   </head>
 
   <body>
+
+    <nav>
+      <ul>
+        <li> <a href="main.html"> Homepage </a></li>
+        <li> <a href="youtube.html"> Library </a></li>
+      </ul>
+    </nav>
+
     <h1>Chat with Appu</h1>
     <h2>Ask anything</h2>
 
