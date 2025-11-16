@@ -1,13 +1,13 @@
-import openai from "openai";
+import 'dotenv/config';
+import OpenAI from "openai";
+
 const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+  apiKey: process.env.OPENAI_API_KEY
 });
 
-const response = await client.responses.create(
-    {
-        model: "gpt-5.1",
-        input: "Hello!"
-    }
-);
+const response = await client.responses.create({
+    model: "gpt-3.5-turbo",  
+    input: "Hello!"
+});
 
-console.log(response);
+console.log(response.output_text);
