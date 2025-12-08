@@ -1,4 +1,4 @@
-const { RiTa } = require('rita');
+/* const { RiTa } = require('rita');
 
 
 export function choose(arr) {
@@ -93,4 +93,4 @@ export function chatbotResponse(input) {
 
 console.log(chatbotResponse("I struggle with math."));
 console.log(chatbotResponse("Tell me about science."));
-console.log(chatbotResponse("I love physics."));
+console.log(chatbotResponse("I love physics.")); */
